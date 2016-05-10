@@ -1,0 +1,266 @@
+ <!--       search bar          -->
+ <div class="container-fluid" >
+  <div class="row">
+ <div class="col-md-3" style="padding-left:6px">
+     
+	  <input type="text" placeholder=" Search by game: " style="width:330px" ng-model="search.game">
+    </div>
+	 <div class="col-md-6">
+	 	 <input type="text" ng-init="search.channel.broadcaster_language=Lang" ng-model="search.channel.broadcaster_language" hidden>
+		   </div>
+</div>
+	</div>
+	
+<div class="main">
+
+   <!--      popis streamova         -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="item col-md-3"  class="img-rounded img-rounded" ng-repeat="x in myName | filter:search" >
+         <a class="fancybox fancybox.iframe stream" data-fancybox-type="iframe" ng-href="{{link+ x.channel.name | trustThisUrl}}" >
+		
+		<div class="head">
+		<span class="name">{{ x.channel.name}}: </span>
+		<span class="game-name">{{ x.game }}</span>
+		
+		</div>
+		
+		<!--
+		<p class="head">{{ x.game }}</p> 
+		
+		-->
+		 <img class="img-responsive" ng-src="{{ x.preview.large }}"/>
+		 <!--
+          <p class="head">{{ x.channel.name }}</p> 
+          -->
+		  </a>
+      </div>
+    </div>
+	
+
+	
+<!--       pagination            -->
+  </div>
+  <ul class="pagination" ng-controller="Active" style="text-align: center;margin: 2px auto 0px 45%;" >
+  <li ng-class="getClass('/home/0')"><a href="#/home/{{0}}">1</a></li>
+  <li ng-class="getClass('/home/48')"><a href="#/home/{{48}}">2</a></li>
+  <li ng-class="getClass('/home/96')"><a href="#/home/{{96}}">3</a></li>
+  <li ng-class="getClass('/home/144')"><a href="#/home/{{144}}">4</a></li>
+  <li ng-class="getClass('/home/192')"><a href="#/home/{{192}}">5</a></li>
+</ul>
+</div>
+
+<!-- izbornik jezika  -->
+	<div class="languageFilterBar enabled" ng-controller="Active">
+	<div class="inner" style="width: 100%;">
+
+<div class="flag" ng-class="getClass('/home/{{value}}/al')">
+<a href="#/home/{{value}}/{{'al'}}"><img class="cover"  src="/lan/al.svg">
+<div class="name"> al</div> </a>
+</div>
+<div class="flag"  ng-class="getClass('/home/{{value}}/am')">
+<a href="#/home/{{value}}/{{'am'}}"><img class="cover"  src="/lan/am.svg">
+<div class="name"> am</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/az')">
+<a href="#/home/{{value}}/{{'az'}}"><img class="cover"  src="/lan/az.svg">
+<div class="name"> az</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/bg')">
+<a href="#/home/{{value}}/{{'bg'}}"><img class="cover"  src="/lan/bg.svg">
+<div class="name"> bg</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/bn')">
+<a href="#/home/{{value}}/{{'bn'}}"><img class="cover"  src="/lan/bn.svg">
+<div class="name"> bn</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/by')">
+<a href="#/home/{{value}}/{{'by'}}"><img class="cover"  src="/lan/by.svg">
+<div class="name"> by</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/cn')">
+<a href="#/home/{{value}}/{{'cn'}}"><img class="cover"  src="/lan/cn.svg">
+<div class="name"> cn</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/cz')">
+<a href="#/home/{{value}}/{{'cz'}}"><img class="cover"  src="/lan/cz.svg">
+<div class="name"> cz</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/de')">
+<a href="#/home/{{value}}/{{'de'}}"><img class="cover"  src="/lan/de.svg">
+<div class="name"> de</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/dk')">
+<a href="#/home/{{value}}/{{'dk'}}"><img class="cover"  src="/lan/dk.svg">
+<div class="name"> dk</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/ee')">
+<a href="#/home/{{value}}/{{'ee'}}"><img class="cover"  src="/lan/ee.svg">
+<div class="name"> ee</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/es')">
+<a href="#/home/{{value}}/{{'es'}}"><img class="cover"  src="/lan/es.svg">
+<div class="name"> es</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/fi')">
+<a href="#/home/{{value}}/{{'fi'}}"><img class="cover"  src="/lan/fi.svg">
+<div class="name"> fi</div></a>
+</div>	
+<div class="flag" ng-class="getClass('/home/{{value}}/fr')">
+<a href="#/home/{{value}}/{{'fr'}}"><img class="cover"  src="/lan/fr.svg">
+<div class="name"> fr</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/en')">
+<a href="#/home/{{value}}/{{'en'}}"><img class="cover"  src="/lan/gb.svg">
+<div class="name"> gb</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/ge')">
+<a href="#/home/{{value}}/{{'ge'}}"><img class="cover"  src="/lan/ge.svg">
+<div class="name"> ge</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/gr')">
+<a href="#/home/{{value}}/{{'gr'}}"><img class="cover"  src="/lan/gr.svg">
+<div class="name"> gr</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/hr')">
+<a href="#/home/{{value}}/{{'hr'}}"><img class="cover"  src="/lan/hr.svg">
+<div class="name"> hr</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/hu')">
+<a href="#/home/{{value}}/{{'hu'}}"><img class="cover"  src="/lan/hu.svg">
+<div class="name"> hu</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/id')">
+<a href="#/home/{{value}}/{{'id'}}"><img class="cover"  src="/lan/id.svg">
+<div class="name"> id</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/il')">
+<a href="#/home/{{value}}/{{'il'}}"><img class="cover"  src="/lan/il.svg">
+<div class="name"> il</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/in')">
+<a href="#/home/{{value}}/{{'in'}}"><img class="cover"  src="/lan/in.svg">
+<div class="name"> in</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/ir')">
+<a href="#/home/{{value}}/{{'ir'}}"><img class="cover"  src="/lan/ir.svg">
+<div class="name"> is</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/is')">
+<a href="#/home/{{value}}/{{'is'}}"><img class="cover"  src="/lan/is.svg">
+<div class="name"> is</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/it')">
+<a href="#/home/{{value}}/{{'it'}}"><img class="cover"  src="/lan/it.svg">
+<div class="name"> it</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/jp')">
+<a href="#/home/{{value}}/{{'jp'}}"><img class="cover"  src="/lan/jp.svg">
+<div class="name"> jp</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/ke')">
+<a href="#/home/{{value}}/{{'ke'}}"><img class="cover"  src="/lan/ke.svg">
+<div class="name"> ke</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/kr')">
+<a href="#/home/{{value}}/{{'kr'}}"><img class="cover"  src="/lan/kr.svg">
+<div class="name"> kr</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/kz')">
+<a href="#/home/{{value}}/{{'kz'}}"><img class="cover"  src="/lan/kz.svg">
+<div class="name"> kz</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/lt')">
+<a href="#/home/{{value}}/{{'lt'}}"><img class="cover"  src="/lan/lt.svg">
+<div class="name"> lt</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/lv')">
+<a href="#/home/{{value}}/{{'lv'}}"><img class="cover"  src="/lan/lv.svg">
+<div class="name"> lv</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/mk')">
+<a href="#/home/{{value}}/{{'mk'}}"><img class="cover"  src="/lan/mk.svg">
+<div class="name"> mk</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/mn')">
+<a href="#/home/{{value}}/{{'mn'}}"><img class="cover"  src="/lan/mn.svg">
+<div class="name"> mn</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/mv')">
+<a href="#/home/{{value}}/{{'mv'}}"><img class="cover"  src="/lan/mv.svg">
+<div class="name"> mv</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/nl')">
+<a href="#/home/{{value}}/{{'nl'}}"><img class="cover"  src="/lan/nl.svg">
+<div class="name"> nl</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/no')">
+<a href="#/home/{{value}}/{{'no'}}"><img class="cover"  src="/lan/no.svg">
+<div class="name"> no</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/pk')">
+<a href="#/home/{{value}}/{{'pk'}}"><img class="cover"  src="/lan/pk.svg">
+<div class="name"> pk</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/pl')">
+<a href="#/home/{{value}}/{{'pl'}}"><img class="cover"  src="/lan/pl.svg">
+<div class="name"> pl</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/pt')">
+<a href="#/home/{{value}}/{{'pt'}}"><img class="cover"  src="/lan/pt.svg">
+<div class="name"> pt</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/ro')">
+<a href="#/home/{{value}}/{{'ro'}}"><img class="cover"  src="/lan/ro.svg">
+<div class="name"> ro</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/ru')">
+<a href="#/home/{{value}}/{{'ru'}}"><img class="cover"  src="/lan/ru.svg">
+<div class="name"> ru</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/sa')">
+<a href="#/home/{{value}}/{{'sa'}}"><img class="cover"  src="/lan/sa.svg">
+<div class="name"> sa</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/se')">
+<a href="#/home/{{value}}/{{'se'}}"><img class="cover"  src="/lan/se.svg">
+<div class="name"> se</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/si')">
+<a href="#/home/{{value}}/{{'si'}}"><img class="cover"  src="/lan/si.svg">
+<div class="name"> si</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/sk')">
+<a href="#/home/{{value}}/{{'sk'}}"><img class="cover"  src="/lan/sk.svg">
+<div class="name"> sk</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/sy')">
+<a href="#/home/{{value}}/{{'sy'}}"><img class="cover"  src="/lan/sy.svg">
+<div class="name"> sy</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/th')">
+<a href="#/home/{{value}}/{{'th'}}"><img class="cover"  src="/lan/th.svg">
+<div class="name"> th</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/tr')">
+<a href="#/home/{{value}}/{{'tr'}}"><img class="cover"  src="/lan/tr.svg">
+<div class="name"> tr</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/ua')">
+<a href="#/home/{{value}}/{{'ua'}}"><img class="cover"  src="/lan/ua.svg">
+<div class="name"> ua</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/uz')">
+<a href="#/home/{{value}}/{{'uz'}}"><img class="cover"  src="/lan/uz.svg">
+<div class="name"> uz</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/vn')">
+<a href="#/home/{{value}}/{{'vn'}}"><img class="cover"  src="/lan/vn.svg">
+<div class="name"> vn</div></a>
+</div>
+<div class="flag" ng-class="getClass('/home/{{value}}/za')">
+<a href="#/home/{{value}}/{{'za'}}"><img class="cover"  src="/lan/za.svg">
+<div class="name"> za</div></a>
+</div>
+	</div>
+	</div>

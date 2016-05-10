@@ -1,0 +1,39 @@
+<div class="main">
+<div class="container-fluid" >
+  <div class="row">
+    <div class="col-md-2" style="padding-left:20px">
+      <!--Sidebar content-->
+	  <div class="game">
+	  <div class="head" style="padding:0;margin:0;" ><input class="head" style="text-align:center" placeholder="Search:" type="text" ng-model="search.game"></div>
+      <div class="Image" style="height:276px;text-align:center">
+	  Search by game: 
+	  </div>
+	  </div>
+    </div>
+  <div class="container-fluid">
+
+  
+    <div class="row">
+      <div  ng-repeat="x in myGames | filter:search" >
+        <a class="game" href="#/streams/{{x.game.name}}">
+		<div class="head">{{ x.game.name }}</div>
+          <div class="Image">
+		  <img  class="img-responsive img-rounded" ng-src="{{ x.game.box.large }}"  alt="{{ x.game.name }}"/>
+		  </div>
+        </a>
+      </div>
+    </div>
+
+	
+  </div>
+  <!--
+   <ul class="pagination" ng-controller="Active" style="text-align: center;margin: 2px auto 45px 45%;" >
+  <li ng-class="getClass('/streams/0')"><a href="#/streams/{{0}}">1</a></li>
+  <li ng-class="getClass('/streams/100')"><a href="#/streams/{{100}}">2</a></li>
+  <li ng-class="getClass('/streams/200')"><a href="#/streams/{{200}}">3</a></li>
+  <li ng-class="getClass('/streams/300')"><a href="#/streams/{{300}}">4</a></li>
+  <li ng-class="getClass('/streams/400')"><a href="#/streams/{{400}}">5</a></li>
+</ul>
+-->
+</div>
+

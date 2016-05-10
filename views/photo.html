@@ -1,0 +1,233 @@
+ <div class="container-fluid">
+<!-- Učitavanje igrica -->
+<input type="text" ng-init="search.channel.broadcaster_language=Lang" ng-model="search.channel.broadcaster_language" hidden>
+
+    <div class="row">
+      <div class="item col-md-3"  class="img-rounded img-rounded" ng-repeat="x in myLink | filter:gameN|filter:search" >
+         <a class="fancybox fancybox.iframe stream" data-fancybox-type="iframe" ng-href="{{link+ x.channel.name | trustThisUrl}}" >
+		<div class="head">
+		<span class="name">{{ x.channel.name}}: </span>
+		<span class="game-name">{{ x.game }}</span>
+		</div>
+		 <img class="img-responsive" ng-src="{{ x.preview.large }}"/>
+		  </a>
+      </div>
+    </div>
+	
+  </div>
+  <br>
+  <br>
+  <!-- Izbornik jezika -->
+ <div class="languageFilterBar enabled" ng-controller="Active">
+	<div class="inner" style="width: 100%;">
+
+<div class="flag" ng-class="getClass('/streams/{{game}}/al')">
+<a href="#/streams/{{game}}/{{'al'}}"><img class="cover"  src="/lan/al.svg">
+<div class="name"> al</div> </a>
+</div>
+<div class="flag"  ng-class="getClass('/streams/{{game}}/am')">
+<a href="#/streams/{{game}}/{{'am'}}"><img class="cover"  src="/lan/am.svg">
+<div class="name"> am</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/az')">
+<a href="#/streams/{{game}}/{{'az'}}"><img class="cover"  src="/lan/az.svg">
+<div class="name"> az</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/bg')">
+<a href="#/streams/{{game}}/{{'bg'}}"><img class="cover"  src="/lan/bg.svg">
+<div class="name"> bg</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/bn')">
+<a href="#/streams/{{game}}/{{'bn'}}"><img class="cover"  src="/lan/bn.svg">
+<div class="name"> bn</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/by')">
+<a href="#/streams/{{game}}/{{'by'}}"><img class="cover"  src="/lan/by.svg">
+<div class="name"> by</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/cn')">
+<a href="#/streams/{{game}}/{{'cn'}}"><img class="cover"  src="/lan/cn.svg">
+<div class="name"> cn</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/cz')">
+<a href="#/streams/{{game}}/{{'cz'}}"><img class="cover"  src="/lan/cz.svg">
+<div class="name"> cz</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/de')">
+<a href="#/streams/{{game}}/{{'de'}}"><img class="cover"  src="/lan/de.svg">
+<div class="name"> de</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/dk')">
+<a href="#/streams/{{game}}/{{'dk'}}"><img class="cover"  src="/lan/dk.svg">
+<div class="name"> dk</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/ee')">
+<a href="#/streams/{{game}}/{{'ee'}}"><img class="cover"  src="/lan/ee.svg">
+<div class="name"> ee</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/es')">
+<a href="#/streams/{{game}}/{{'es'}}"><img class="cover"  src="/lan/es.svg">
+<div class="name"> es</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/fi')">
+<a href="#/streams/{{game}}/{{'fi'}}"><img class="cover"  src="/lan/fi.svg">
+<div class="name"> fi</div></a>
+</div>	
+<div class="flag" ng-class="getClass('/streams/{{game}}/fr')">
+<a href="#/streams/{{game}}/{{'fr'}}"><img class="cover"  src="/lan/fr.svg">
+<div class="name"> fr</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/en')">
+<a href="#/streams/{{game}}/{{'en'}}"><img class="cover"  src="/lan/gb.svg">
+<div class="name"> gb</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/ge')">
+<a href="#/streams/{{game}}/{{'ge'}}"><img class="cover"  src="/lan/ge.svg">
+<div class="name"> ge</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/gr')">
+<a href="#/streams/{{game}}/{{'gr'}}"><img class="cover"  src="/lan/gr.svg">
+<div class="name"> gr</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/hr')">
+<a href="#/streams/{{game}}/{{'hr'}}"><img class="cover"  src="/lan/hr.svg">
+<div class="name"> hr</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/hu')">
+<a href="#/streams/{{game}}/{{'hu'}}"><img class="cover"  src="/lan/hu.svg">
+<div class="name"> hu</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/id')">
+<a href="#/streams/{{game}}/{{'id'}}"><img class="cover"  src="/lan/id.svg">
+<div class="name"> id</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/il')">
+<a href="#/streams/{{game}}/{{'il'}}"><img class="cover"  src="/lan/il.svg">
+<div class="name"> il</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/in')">
+<a href="#/streams/{{game}}/{{'in'}}"><img class="cover"  src="/lan/in.svg">
+<div class="name"> in</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/ir')">
+<a href="#/streams/{{game}}/{{'ir'}}"><img class="cover"  src="/lan/ir.svg">
+<div class="name"> is</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/is')">
+<a href="#/streams/{{game}}/{{'is'}}"><img class="cover"  src="/lan/is.svg">
+<div class="name"> is</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/it')">
+<a href="#/streams/{{game}}/{{'it'}}"><img class="cover"  src="/lan/it.svg">
+<div class="name"> it</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/jp')">
+<a href="#/streams/{{game}}/{{'jp'}}"><img class="cover"  src="/lan/jp.svg">
+<div class="name"> jp</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/ke')">
+<a href="#/streams/{{game}}/{{'ke'}}"><img class="cover"  src="/lan/ke.svg">
+<div class="name"> ke</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/kr')">
+<a href="#/streams/{{game}}/{{'kr'}}"><img class="cover"  src="/lan/kr.svg">
+<div class="name"> kr</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/kz')">
+<a href="#/streams/{{game}}/{{'kz'}}"><img class="cover"  src="/lan/kz.svg">
+<div class="name"> kz</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/lt')">
+<a href="#/streams/{{game}}/{{'lt'}}"><img class="cover"  src="/lan/lt.svg">
+<div class="name"> lt</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/lv')">
+<a href="#/streams/{{game}}/{{'lv'}}"><img class="cover"  src="/lan/lv.svg">
+<div class="name"> lv</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/mk')">
+<a href="#/streams/{{game}}/{{'mk'}}"><img class="cover"  src="/lan/mk.svg">
+<div class="name"> mk</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/mn')">
+<a href="#/streams/{{game}}/{{'mn'}}"><img class="cover"  src="/lan/mn.svg">
+<div class="name"> mn</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/mv')">
+<a href="#/streams/{{game}}/{{'mv'}}"><img class="cover"  src="/lan/mv.svg">
+<div class="name"> mv</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/nl')">
+<a href="#/streams/{{game}}/{{'nl'}}"><img class="cover"  src="/lan/nl.svg">
+<div class="name"> nl</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/no')">
+<a href="#/streams/{{game}}/{{'no'}}"><img class="cover"  src="/lan/no.svg">
+<div class="name"> no</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/pk')">
+<a href="#/streams/{{game}}/{{'pk'}}"><img class="cover"  src="/lan/pk.svg">
+<div class="name"> pk</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/pl')">
+<a href="#/streams/{{game}}/{{'pl'}}"><img class="cover"  src="/lan/pl.svg">
+<div class="name"> pl</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/pt')">
+<a href="#/streams/{{game}}/{{'pt'}}"><img class="cover"  src="/lan/pt.svg">
+<div class="name"> pt</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/ro')">
+<a href="#/streams/{{game}}/{{'ro'}}"><img class="cover"  src="/lan/ro.svg">
+<div class="name"> ro</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/ru')">
+<a href="#/streams/{{game}}/{{'ru'}}"><img class="cover"  src="/lan/ru.svg">
+<div class="name"> ru</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/sa')">
+<a href="#/streams/{{game}}/{{'sa'}}"><img class="cover"  src="/lan/sa.svg">
+<div class="name"> sa</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/se')">
+<a href="#/streams/{{game}}/{{'se'}}"><img class="cover"  src="/lan/se.svg">
+<div class="name"> se</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/si')">
+<a href="#/streams/{{game}}/{{'si'}}"><img class="cover"  src="/lan/si.svg">
+<div class="name"> si</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/sk')">
+<a href="#/streams/{{game}}/{{'sk'}}"><img class="cover"  src="/lan/sk.svg">
+<div class="name"> sk</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/sy')">
+<a href="#/streams/{{game}}/{{'sy'}}"><img class="cover"  src="/lan/sy.svg">
+<div class="name"> sy</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/th')">
+<a href="#/streams/{{game}}/{{'th'}}"><img class="cover"  src="/lan/th.svg">
+<div class="name"> th</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/tr')">
+<a href="#/streams/{{game}}/{{'tr'}}"><img class="cover"  src="/lan/tr.svg">
+<div class="name"> tr</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/ua')">
+<a href="#/streams/{{game}}/{{'ua'}}"><img class="cover"  src="/lan/ua.svg">
+<div class="name"> ua</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/uz')">
+<a href="#/streams/{{game}}/{{'uz'}}"><img class="cover"  src="/lan/uz.svg">
+<div class="name"> uz</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/vn')">
+<a href="#/streams/{{game}}/{{'vn'}}"><img class="cover"  src="/lan/vn.svg">
+<div class="name"> vn</div></a>
+</div>
+<div class="flag" ng-class="getClass('/streams/{{game}}/za')">
+<a href="#/streams/{{game}}/{{'za'}}"><img class="cover"  src="/lan/za.svg">
+<div class="name"> za</div></a>
+</div>
+	</div>
+	</div>
