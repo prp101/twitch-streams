@@ -1,0 +1,180 @@
+html, body {
+  background: #808080;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+.row div{
+	border-style: groove;
+	margin-right: 0px;
+margin-left: 0px;
+}
+
+
+.header a:hover {
+  color: #c91717;
+  text-decoration: none;   
+}
+.item {
+  cursor: pointer;
+  margin: 0;  
+  padding: 0;
+}
+.item:hover {
+  background: #000; 
+  text-decoration: none;
+  transition: background 500ms;
+}
+p.author {
+  color: #000;
+  padding: 0px;
+  text-align: center;
+  text-decoration: none;
+  
+}
+.item:hover p.author, .item:hover a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/*Okviri za igrice */
+
+.game {
+    border: 1px solid rgba(0,0,0,.5);
+    margin: 5px;
+    cursor: pointer;
+    width: 200px;
+    position: relative;
+    opacity: .9;
+    transition: opacity .3s;
+    float: left;
+}
+.game .head{
+    text-overflow: ellipsis;
+}
+.game .head {
+    overflow: hidden;
+}
+.game .head {
+    width: 100%;
+    background: rgba(0,0,0,.3);
+    border: 1px solid #141414;
+    padding: 5px;
+    font-size: 14px;
+	  text-align: justify;
+    text-justify: inter-word;
+    line-height: 22px;
+font-family:"Trebuchet MS", Helvetica, sans-serif;
+    height: 2pc;
+    color: rgba(255,255,255,.9);
+    white-space: nowrap;
+}
+.game .head {
+    box-shadow: 0 1px 0 rgba(255,255,255,.1) inset,0 0 1px rgba(0,0,0,.7);
+}
+
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+
+/* Streamovii  */
+.stream {
+    border: 1px solid rgba(0,0,0,.5);
+    margin: 5px;
+    cursor: pointer;
+    width: 330px;
+    position: relative;
+    opacity: .9;
+    transition: opacity .3s;
+    float: left;
+}
+.stream .head{
+    text-overflow: ellipsis;
+}
+.stream .head {
+    overflow: hidden;
+}
+.stream .head {
+    width: 100%;
+    background: rgba(0,0,0,.3);
+    border: 1px solid #141414;
+    padding: 5px;
+    font-size: 14px;
+	  text-align: justify;
+    text-justify: inter-word;
+    line-height: 22px;
+font-family:"Trebuchet MS", Helvetica, sans-serif;
+    height: 2pc;
+    color: rgba(255,255,255,.50);
+    white-space: nowrap;
+}
+.stream .head {
+    box-shadow: 0 1px 0 rgba(255,255,255,.1) inset,0 0 1px rgba(0,0,0,.7);
+}
+.head .name{
+	color:white;
+	font-weight: bold;
+}
+
+
+/*  Jezici  */
+.languageFilterBar {
+    position: fixed;
+    bottom: 0px;
+    z-index: 100;
+    overflow-x: auto;
+}
+.languageFilterBar {
+    -webkit-transform: translate3d(0,0,0);
+    box-shadow: 0 1px 0 rgba(255,255,255,.1) inset,0 0 1px rgba(0,0,0,.7),0 0 20px rgba(0,0,0,.5);
+    background: #191919;
+    right: 0;
+    overflow-y: hidden;
+    left: 0;
+}
+.languageFilterBar.enabled .flag {
+    opacity: .2;
+}
+.languageFilterBar .flag {
+    opacity: .9;
+    cursor: pointer;
+    float: left;
+}
+
+.languageFilterBar.enabled .flag.active{
+	opacity: .9;
+}
+
+
+.languageFilterBar .flag .cover {
+    border-radius: 3px;
+    height: 20px;
+    margin: 5px 2.5px;
+}
+
+
+.languageFilterBar .flag .name {
+    display: none;
+}
+
+/* up arrow*/
+a.back-to-top {
+	display: none;
+	width: 45px;
+	height: 45px;
+	text-indent: -9999px;
+	position: fixed;
+	z-index: 999;
+	right: 20px;
+	bottom: 34px;
+	background: #191919  url("/img/up-arrow.png") no-repeat center 43%;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+}
